@@ -24,4 +24,12 @@ contract ContractTest is Test {
         countContract.setCount(20);
         assertEq(countContract.count(), 20);
     }
+
+    function testGetCount() public {
+        CountContract myContract = new CountContract(5);  
+        uint expectedCount = 5;
+        uint realCount = myContract.getCount();
+        assertEq(realCount, expectedCount);
+    }
+
 }
